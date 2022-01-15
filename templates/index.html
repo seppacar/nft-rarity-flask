@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block head %}
+{% endblock %}
+{% block body %}
+<div class="topnav">
+    <a class="active" href="/">Home</a>
+    <a href="/about">About</a>
+</div>
+<div class="row">
+    <div class="column">
+        <img src="{{data['image']}}">
+    </div>
+    <div class="column">
+        <form class="rarityform">
+            <label for="outputdata">Rarity</label>
+            <input type="text" id="outputdata" name="rarity_score" placeholder="{{data['rarity']}}" disabled><br><br>
+        </form>
+        {% for trait in data['traits']%}
+        <form class="outputform">
+            <label for="outputdata">{{trait}}</label>
+            <input type="text" id="outputdata" name="rarity_score" placeholder="{{data['traits'][trait]}}" disabled><br><br>
+        </form>
+        {% endfor %}
+    </div>
+</div>
+<div class="inputform">
+    <form action="{{url_for("index")}}" method="post">
+        <h1>#{{data['_id']}}</h1>
+        <div>
+            <label for="cname">Collection Slug</label>
+            <input type="text" id="cname" name="collection_name" placeholder="{{data['_slug']}}">
+        </div>
+        <div>
+            <label for="token_id">Token Id</label>
+            <input type="text" id="token_id" name="token_id" placeholder="{{data['_id']}}">
+        </div>
+        <button class="button button1">Get Rarity</button>
+    </form>
+</div>
+{% endblock %}

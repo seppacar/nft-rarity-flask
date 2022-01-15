@@ -1,0 +1,114 @@
+body {
+	background-color: powderblue;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+#outputdata::placeholder {
+	color: black;
+	font-size: 1.25em;
+}
+
+.column {
+	float: left;
+	width: 50%;
+	padding: 10px;
+	height: 300px;
+	/* Should be removed. Only for demonstration */
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+img {
+	width: 500px;
+	height: 500px;
+	position: static;
+	left: 25px;
+	top: 25px;
+	border: 5px solid black;
+}
+
+input[type=text] {
+	width: 100%;
+	font-family: "Press Start 2p", cursive;
+	padding: 12px 20px;
+	margin: 10px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.button1 {
+	background-color: white;
+	font-family: "Press Start 2p", cursive;
+	color: black;
+	border: 2px solid black;
+	height: 75px;
+	width: 150px;
+}
+
+.button1:hover {
+	background-color: blue;
+	color: white;
+}
+
+.inputform {
+	font-family: "Press Start 2p", cursive;
+	float: left;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+	margin-top: 225px;
+}
+
+.outputform {
+	font-family: "Press Start 2p", cursive;
+	border-radius: 5px;
+	background-color: #E29E8F;
+	padding: 20px;
+	position: relative;
+	margin-top: 25px;
+	margin-left: 10px;
+}
+
+.rarityform {
+	font-family: "Press Start 2p", cursive;
+	border-radius: 5px;
+	background-color: #964779;
+	padding: 20px;
+	position: relative;
+	margin-top: 25px;
+	margin-left: 10px;
+}
+
+.topnav {
+	background-color: #040720;
+	font-family: "Press Start 2p", cursive;
+	overflow: hidden;
+}
+
+.topnav a {
+	float: right;
+	color: gray;
+	text-align: center;
+	padding: 20px 20px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.topnav a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+.topnav a.active {
+	background-color: gray;
+	color: white;
+}
