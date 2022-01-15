@@ -2,10 +2,11 @@ import requests
 
 # TODO Fix all error handling, It is very messy right now, and maybe implement another API
 
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'}
 def get_collection(collection_slug):
     url = f"https://api.opensea.io/api/v1/collection/{collection_slug}"
     try:
-        response = requests.request("GET", url)
+        response = requests.get(url, headers=headers)
         return response.json()  # Collection data
     except Exception:
         print("Connection Error")
@@ -15,7 +16,7 @@ def get_collection(collection_slug):
 def get_asset(collection_slug, token_id):
     url = f'https://api.opensea.io/api/v1/assets?token_ids={token_id}&order_direction=desc&offset=0&limit=1&collection={collection_slug}'
     try:
-        response = requests.get(url)
+        response = requests.get(url, headers=headers)
         return response.json()
     except Exception:
         print("Connection Error")
@@ -35,7 +36,7 @@ def get_trait_count(collection_data):
 # TODO Improve rarity algorithm
 def get_asset_rarity(token_id, collection_slug, trait_count):
     url = f'https://api.opensea.io/api/v1/assets?token_ids={token_id}&order_direction=desc&offset=0&limit=1&collection={collection_slug}'
-    response = requests.get(url)
+    response = requests.get(url, headers=headers)
     rarity = 0
     try:
         for trait_type in response.json()['assets'][0]['traits']:
