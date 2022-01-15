@@ -14,7 +14,7 @@ def index():
             data = get_asset_data(collection_slug, token_id)
         except Exception:
             data = get_asset_data('boredapeyachtclub', 1234)
-            data['id'] = "ERROR!!!"
+            data['_id'] = "ERROR!!!"
             print("Error")
     else:
         data = get_asset_data('boredapeyachtclub', 1234)
