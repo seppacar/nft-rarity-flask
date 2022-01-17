@@ -3,6 +3,8 @@ import requests
 # TODO Fix all error handling, It is very messy right now, and maybe implement another API
 
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'}
+
+
 def get_collection(collection_slug):
     url = f"https://api.opensea.io/api/v1/collection/{collection_slug}"
     try:
